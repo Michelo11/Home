@@ -2,5 +2,10 @@ name: Homes
 version: '${version}'
 main: me.michelemanna.homes.Homes
 api-version: '1.20'
-authors: [michelo11]
+authors: [ michelo11 ]
 website: https://michelemanna.me
+commands:
+  homes:
+    description: Open the homes GUI
+  sethome:
+    description: Set a home
