@@ -10,7 +10,6 @@ import org.jetbrains.annotations.NotNull;
 import java.sql.SQLException;
 
 public class SetHomeCommand implements CommandExecutor {
-
     private final Homes plugin;
 
     public SetHomeCommand(Homes plugin) {
@@ -32,7 +31,7 @@ public class SetHomeCommand implements CommandExecutor {
 
         try {
             plugin.getDatabase().addHome(player, args[0], player.getLocation());
-            player.sendMessage("Home set successfully!");
+            player.sendMessage("§aSet home " + args[0] + "!");
         } catch (SQLException e) {
             player.sendMessage("An error occurred while setting the home!");
         }

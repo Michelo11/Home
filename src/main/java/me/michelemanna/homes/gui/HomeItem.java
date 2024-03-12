@@ -14,14 +14,12 @@ import xyz.xenondevs.invui.item.impl.AbstractItem;
 import java.sql.SQLException;
 
 public class HomeItem extends AbstractItem {
-
     private final Homes plugin;
 
     private final String name;
     private final Location location;
 
     public HomeItem(Homes plugin, String name, Location location) {
-
         this.plugin = plugin;
         this.name = name;
         this.location = location;
@@ -29,16 +27,13 @@ public class HomeItem extends AbstractItem {
 
     @Override
     public ItemProvider getItemProvider() {
-
         return new ItemBuilder(Material.DARK_OAK_DOOR)
                 .setDisplayName(name);
     }
 
     @Override
     public void handleClick(@NotNull ClickType clickType, @NotNull Player player, @NotNull InventoryClickEvent inventoryClickEvent) {
-
         if (clickType.equals(ClickType.DROP)) {
-
             try {
                 plugin.getDatabase().removeHome(player, name);
             } catch (SQLException e) {

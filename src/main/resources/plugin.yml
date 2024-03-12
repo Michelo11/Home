@@ -9,3 +9,5 @@ commands:
     description: Open the homes GUI
   sethome:
     description: Set a home
+  gethomesitem:
+    description: Get the homes item

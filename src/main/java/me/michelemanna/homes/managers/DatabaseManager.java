@@ -9,11 +9,9 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class DatabaseManager {
-
     private final Connection connection;
 
     public DatabaseManager(String url) throws SQLException {
-
         connection = DriverManager.getConnection(url);
 
         Statement statement = connection.createStatement();
@@ -31,7 +29,6 @@ public class DatabaseManager {
     }
 
     public Map<String, Location> getHomes(Player player) throws SQLException {
-
         PreparedStatement statement = connection.prepareStatement("SELECT * FROM homes WHERE player = ?");
         statement.setString(1, player.getUniqueId().toString());
 
@@ -56,7 +53,6 @@ public class DatabaseManager {
     }
 
     public void addHome(Player player, String name, Location location) throws SQLException {
-
         PreparedStatement statement = connection.prepareStatement("INSERT INTO homes (player, name, world, x, y, z) VALUES (?, ?, ?, ?, ?, ?);");
 
         statement.setString(1, player.getUniqueId().toString());
@@ -71,7 +67,6 @@ public class DatabaseManager {
     }
 
     public void removeHome(Player player, String name) throws SQLException {
-
         PreparedStatement statement = connection.prepareStatement("DELETE FROM homes WHERE player = ? AND name = ?");
 
         statement.setString(1, player.getUniqueId().toString());
