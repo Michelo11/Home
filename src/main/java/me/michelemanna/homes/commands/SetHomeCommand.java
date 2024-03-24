@@ -20,20 +20,20 @@ public class SetHomeCommand implements CommandExecutor {
     public boolean onCommand(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label, @NotNull String[] args) {
 
         if (!(sender instanceof Player player)) {
-            sender.sendMessage("Only players can use this command!");
+            sender.sendMessage(plugin.getMessage("commands.player-only"));
             return true;
         }
 
         if (args.length == 0) {
-            player.sendMessage("You must specify a name for the home!");
+            player.sendMessage(plugin.getMessage("commands.sethome-usage"));
             return true;
         }
 
         try {
             plugin.getDatabase().addHome(player, args[0], player.getLocation());
-            player.sendMessage("§aSet home " + args[0] + "!");
+            player.sendMessage(plugin.getMessage("commands.sethome-success").replace("%name%", args[0]));
         } catch (SQLException e) {
-            player.sendMessage("An error occurred while setting the home!");
+            player.sendMessage(plugin.getMessage("commands.sethome-error"));
         }
 
         return true;

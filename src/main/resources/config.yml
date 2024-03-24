@@ -1,2 +1,16 @@
-# This file contains the configuration for the application
+# Configuration database in JDBC format
 database: ""
+
+# Messages configuration
+messages:
+  commands:
+    player-only: "&cThis command can only be executed by a player."
+    gethomesitem-success: "&aYou have received the item to set your home."
+    sethome-usage: "&cUsage: /sethome <name>"
+    sethome-success: "&aHome &e%name% &aset."
+    sethome-error: "&cAn error occurred while setting the home."
+  gui:
+    home-deleted: "&aThe home &e%name% &ahas been deleted."
+    teleported: "&aYou have been teleported to &e%name%."
+    error: "&cAn error occurred while fetching the homes."
+    no-homes: "&cYou don't have any homes."

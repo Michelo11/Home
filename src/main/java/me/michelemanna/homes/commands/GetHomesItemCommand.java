@@ -1,5 +1,6 @@
 package me.michelemanna.homes.commands;
 
+import me.michelemanna.homes.Homes;
 import org.bukkit.Material;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -13,7 +14,7 @@ public class GetHomesItemCommand implements CommandExecutor {
     public boolean onCommand(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label, @NotNull String[] args) {
 
         if (!(sender instanceof Player player)) {
-            sender.sendMessage("§cYou must be a player to use this command.");
+            sender.sendMessage(Homes.getInstance().getMessage("commands.player-only"));
             return true;
         }
 
@@ -21,7 +22,7 @@ public class GetHomesItemCommand implements CommandExecutor {
                 .setDisplayName("Home Menu");
 
         player.getInventory().addItem(item.get());
-        player.sendMessage("§aYou have received the Home Menu item.");
+        player.sendMessage(Homes.getInstance().getMessage("commands.gethomesitem-success"));
 
         return false;
     }

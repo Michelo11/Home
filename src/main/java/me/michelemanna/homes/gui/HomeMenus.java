@@ -20,12 +20,12 @@ public class HomeMenus {
         try {
             homes = Homes.getInstance().getDatabase().getHomes(player);
         } catch (SQLException e) {
-            player.sendMessage("An error occurred while getting your homes!");
+            player.sendMessage(Homes.getInstance().getMessage("gui.error"));
             return;
         }
 
         if (homes.isEmpty()) {
-            player.sendMessage("You don't have any homes set!");
+            player.sendMessage(Homes.getInstance().getMessage("gui.no-homes"));
             return;
         }
 

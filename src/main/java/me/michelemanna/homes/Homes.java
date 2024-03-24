@@ -6,6 +6,7 @@ import me.michelemanna.homes.commands.SetHomeCommand;
 import me.michelemanna.homes.listeners.PlayerListener;
 import me.michelemanna.homes.managers.DatabaseManager;
 import org.bukkit.Bukkit;
+import org.bukkit.ChatColor;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public final class Homes extends JavaPlugin {
@@ -31,7 +32,13 @@ public final class Homes extends JavaPlugin {
 
     @Override
     public void onDisable() {
+        // Plugin shutdown logic
     }
+
+    public String getMessage(String path) {
+        return ChatColor.translateAlternateColorCodes('&', this.getConfig().getString("messages." + path, "&cMessage not found: " + path));
+    }
+
 
     public DatabaseManager getDatabase() {
         return database;

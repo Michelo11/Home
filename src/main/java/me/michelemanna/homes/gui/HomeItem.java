@@ -40,12 +40,12 @@ public class HomeItem extends AbstractItem {
                 throw new RuntimeException(e);
             }
 
-            player.sendMessage("§aYour home §e" + name + "§a has been removed.");
+            player.sendMessage(plugin.getMessage("gui.home-deleted").replace("%name%", name));
             player.closeInventory();
             return;
         }
 
         player.teleport(location);
-        player.sendMessage("§aYou have been teleported to your home §e" + name + "§a.");
+        player.sendMessage(plugin.getMessage("gui.teleported").replace("%name%", name));
     }
 }
