@@ -1,5 +1,5 @@
 # Configuration database in JDBC format
-database: ""
+database: "jdbc:sqlite:database.db"
 
 # Messages configuration
 messages:
