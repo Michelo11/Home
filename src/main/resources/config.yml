@@ -9,6 +9,7 @@ messages:
     sethome-usage: "&cUsage: /sethome <name>"
     sethome-success: "&aHome &e%name% &aset."
     sethome-error: "&cAn error occurred while setting the home."
+    delete-home: "&aYou have deleted the home &e%name%."
   gui:
     home-deleted: "&aThe home &e%name% &ahas been deleted."
     teleported: "&aYou have been teleported to &e%name%."

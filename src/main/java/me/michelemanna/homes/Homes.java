@@ -21,6 +21,7 @@ public final class Homes extends JavaPlugin {
         getCommand("homes").setExecutor(new HomesCommand(this));
         getCommand("sethome").setExecutor(new SetHomeCommand(this));
         getCommand("gethomesitem").setExecutor(new GetHomesItemCommand());
+        getCommand("deletehome").setExecutor(new SetHomeCommand(this));
         Bukkit.getPluginManager().registerEvents(new PlayerListener(), this);
 
         try {
